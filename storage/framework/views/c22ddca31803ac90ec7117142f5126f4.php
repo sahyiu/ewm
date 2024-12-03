@@ -39,49 +39,38 @@
             <ul>
                 <!-- ADMIN SIDE BAR ITEMS -->
                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('view-admin-dashboard')): ?>
-            <li>
-                <a href="<?php echo e(route('admin.releaseStudentNo')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    RELEASE STUDENT No. RANGE
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.schedule')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    SCHEDULE STUDENT
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.schedule')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    INSTRUCTORS
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.schedule')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    COURSES
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.schedule')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    USERS
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.billings')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    BILLINGS
-                </a>
-            </li>
-
+                <li class="mb-4">
+                    <a href="<?php echo e(route('admin.releaseStudentNo')); ?>" 
+                    class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+                    RELEASE STUDENT No. RANGE</a></li>
+                <li class="mb-4">
+                    <a href="<?php echo e(route('admin.schedule')); ?>" 
+                    class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+                    SCHEDULE</a></li>
+                <li class="mb-4">
+                    <a href="<?php echo e(route('admin.instructor')); ?>" 
+                    class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+                    INSTRUCTORS</a></li>
+                <li class="mb-4">
+                    <a href="<?php echo e(route('admin.instructor')); ?>" 
+                    class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+                    COURSES</a></li>
+                <li class="mb-4">
+                    <a href="<?php echo e(route('admin.instructor')); ?>" 
+                    class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+                    USERS</a></li>
+                <li class="mb-4">
+                    <a href="<?php echo e(route('admin.billings')); ?>" 
+                    class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+                    BILLINGS</a></li>
+            </ul>
                 <?php endif; ?>
                 </div>
                     <!-- Main Content -->
                     <div class="flex-1">
             <?php echo $__env->make('layouts.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><main>
             <div class="container mx-auto p-4">
-        <h1 class="text-2xl mb-4">Asmin Dashboard</h1>
+        <h1 class="text-2xl mb-4">Admin Dashboard</h1>
 
     <main class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

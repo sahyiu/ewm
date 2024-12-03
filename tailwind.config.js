@@ -14,8 +14,14 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                maroon: '#800000', // WALANG MAROON SA TAILWIND EH HAHA
+                'maroon-light': '#d27d7d',
+            },
         },
     },
 
     plugins: [forms],
+
+    
 };

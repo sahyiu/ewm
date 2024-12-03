@@ -64,10 +64,22 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
 Route::middleware(['auth', 'role:registrar'])->group(function(){
     Route::get('/registrar/dashboard', [RegistrarController::class, 'dashboard'])->name('registrar.dashboard');
+    Route::get('/registrar/generate-cor', [RegistrarController::class, 'generateCOR'])->name('registrar.generate-cor');
+    Route::get('/registrar/create-student', [RegistrarController::class, 'createStudent'])->name('registrar.create-student');
+    Route::post('/registrar/store', [RegistrarController::class, 'storeStudent'])->name('registrar.store');
 });
 
 Route::middleware(['auth', 'role:officer'])->group(function(){
+    
     Route::get('/officer/dashboard', [OfficerController::class, 'dashboard'])->name('officer.dashboard');
+
+    Route::get('/officer/manage', [OfficerController::class, 'manage'])->name('officer.manage');
+    Route::get('/officer/create', [OfficerController::class, 'create'])->name('officer.create');
+    Route::post('/officer/store', [OfficerController::class, 'store'])->name('officer.store');
+
+    Route::get('/officer/student/{id}/edit', [OfficerController::class, 'edit'])->name('officer.edit');
+    Route::put('/officer/student/{id}', [OfficerController::class, 'update'])->name('officer.update');
+    
 });
 
 require __DIR__.'/auth.php';

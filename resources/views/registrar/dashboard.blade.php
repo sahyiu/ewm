@@ -5,13 +5,43 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    Registrar user
-                </div>
+    <div class="container mx-auto my-8 p-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <!-- Total Students -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                <h5 class="text-2xl font-bold text-white mb-4">Total Students</h5>
+                @php
+                    $all_student = DB::table('students')->count('StudentID');
+                @endphp
+                <p class="text-4xl font-semibold text-white">{{ $all_student }}</p>
             </div>
+
+            <!-- Total Instructors -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                <h5 class="text-2xl font-bold text-white mb-4">Total Instructors</h5>
+                @php
+                    $all_teacher = DB::table('instructors')->count('id');
+                @endphp
+                <p class="text-4xl font-semibold text-white">{{ $all_teacher }}</p>
+            </div>
+
+            <!-- Department Counts -->
+            @php
+                $course = [
+                    'BSCS' => DB::table('students')->where('Course', 1)->count('RegStatus'),
+                    'BSIT' => DB::table('students')->where('Course', 2)->count('RegStatus'),
+                    'BSBM' => DB::table('students')->where('Course', 3)->count('RegStatus'),
+                    'BSE' => DB::table('students')->where('Course', 4)->count('RegStatus'),
+                    'BSHM' => DB::table('students')->where('Course', 5)->count('RegStatus'),
+                ];
+            @endphp
+
+            @foreach ($course as $name => $count)
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+                    <h6 class="text-xl font-bold text-white mb-4">{{ $name }} Students</h6>
+                    <p class="text-4xl font-semibold text-white">{{ $count }}</p>
+                </div>
+            @endforeach
         </div>
     </div>
 </x-app-layout>

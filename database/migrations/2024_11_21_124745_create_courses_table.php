@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id(); // Primary Key: ID
             $table->string('CourseCode', 255);
             $table->string('CourseName', 255);
-            $table->integer('Lec_unit'); // Corrected from $table->int()
-            $table->integer('Lab_unit'); // Corrected from $table->int()
-            $table->integer('Lec_hour'); // Corrected from $table->int()
-            $table->integer('Lab_hour'); // Corrected from $table->int()
+            $table->int('Lec_unit');
+            $table->int('Lab_unit');
+            $table->int('Lec_hour');
+            $table->int('Lab_hour');
             $table->timestamps();
         });
     }

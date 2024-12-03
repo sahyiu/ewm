@@ -46,10 +46,11 @@
                 @can('view-registrar-dashboard')
 
                 <li>
-                    <a href="{{ route('registrar.dashboard') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
+                    <a href="{{ route('registrar.generate-cor') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
                         GENERATE COR
                     </a>
                 </li>
+                
 
                 <li>
                     <a href="{{ route('registrar.dashboard') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
@@ -69,7 +70,7 @@
                 <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
                     <ul class="py-1" aria-labelledby="dropdown">
                     <li>
-                        <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">CREATE NEW RECORD</a>
+                        <a href="{{ route('registrar.create-student') }}" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">CREATE NEW RECORD</a>
                     </li>
                     <li>
                         <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">UPDATE RECORD</a>
@@ -86,12 +87,17 @@
                 @can('view-officer-dashboard')
                 <li>
                     <a href="{{ route('officer.dashboard') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('officer.create') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
                         CREATE NEW RECORD
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('officer.dashboard') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
+                    <a href="{{ route('officer.manage') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
                         UPDATE OLD RECORD
                     </a>
                 </li>

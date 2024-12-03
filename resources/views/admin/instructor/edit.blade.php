@@ -40,11 +40,12 @@
     <li class="mb-4">
         <a href="{{ route('admin.releaseStudentNo') }}" 
            class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
-            RELEASE STUDENT No. RANGE</a></li>
+            RELEASE STUDENT No. RANGE
+        </a></li>
     <li class="mb-4">
         <a href="{{ route('admin.schedule') }}" 
         class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
-        SCHEDULE</a></li>
+        SCHEDULE STUDENT</a></li>
     <li class="mb-4">
         <a href="{{ route('admin.instructor') }}" 
         class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
@@ -61,7 +62,7 @@
         <a href="{{ route('admin.billings') }}" 
         class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
         BILLINGS</a></li>
-            </ul>
+</ul>
 
             </nav>
         </aside>
