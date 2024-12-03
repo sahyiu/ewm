@@ -1,14 +1,22 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5f2fce7a211c281c5f696bf1091fc14ce294fca0
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 use Carbon\Carbon;
+=======
+>>>>>>> 5f2fce7a211c281c5f696bf1091fc14ce294fca0
 
 class Student extends Model
 {
     use HasFactory;
 
+<<<<<<< HEAD
     protected $fillable = ['student_number', 'name'];
 
     // Generate student number for new student
@@ -32,3 +40,14 @@ class Student extends Model
     }
 }
 
+=======
+    protected $table = 'students'; 
+    protected $primaryKey = 'id'; 
+    public $incrementing = true; 
+    protected $fillable = [
+        'StudentID', 'FirstName','MiddleName', 'LastName', 'Sex', 'DateOfBirth', 
+        'Address', 'Email', 'ContactNumber', 'RegStatus', 'Course', 
+        'YearLevel', 'Section', 'Active', 'EnrollmentDate', 'Input_by',
+    ];
+}
+>>>>>>> 5f2fce7a211c281c5f696bf1091fc14ce294fca0

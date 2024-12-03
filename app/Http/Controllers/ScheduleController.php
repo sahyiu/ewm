@@ -14,8 +14,9 @@ class ScheduleController extends Controller
 
         // If there's a search term, filter the schedules based on the search input
         if ($request->has('search')) {
-            $schedules = StudentSchedule::where('subject', 'like', '%' . $request->search . '%')
-                ->orWhere('instructor', 'like', '%' . $request->search . '%')
+            $schedules = StudentSchedule::where('CourseID', 'like', '%' . $request->search . '%')
+                ->orWhere('InstructorID', 'like', '%' . $request->search . '%')
+                ->orWhere('StudentID', 'like', "%$search%")
                 ->orWhere('time', 'like', '%' . $request->search . '%')
                 ->get();
         }
@@ -52,18 +53,24 @@ class ScheduleController extends Controller
         $validated = $request->validate([
             'CourseID' => 'required|string|exists:courses,id',  // Ensure CourseID exists in courses table
             'InstructorID' => 'required|string|exists:instructors,id',  // Ensure InstructorID exists
-            'Day' => 'required|string',
+            'StudentID' => 'required|string|exists:students,id', // Ensure StudentID exists in the students table
+            'Day' => 'required|string|in:Mon,Tue,Wed,Thu,Fri,Sat', // Restrict valid values for days
             'Time' => 'required|date_format:H:i:s',
             'Time_end' => 'required|date_format:H:i:s|after:Time',
+            'YearLevel' => 'required|integer|between:1,4', // Restrict valid YearLevel to 1-4
+            'Section' => 'required|string|max:10', // Validate Section with a max length
         ]);
 
         // Create and save the schedule
         $schedule = new StudentSchedule();  // Use the correct model here
         $schedule->CourseID = $validated['CourseID'];
         $schedule->InstructorID = $validated['InstructorID'];
+        $schedule->StudentID = $validated['StudentID'];
         $schedule->Day = $validated['Day'];
         $schedule->Time = $validated['Time'];
         $schedule->Time_end = $validated['Time_end'];
+        $schedule->YearLevel = $validated['YearLevel'];
+        $schedule->Section = $validated['Section'];
         $schedule->created_at = now();
         $schedule->updated_at = now();
         $schedule->save();
@@ -87,9 +94,13 @@ class ScheduleController extends Controller
         $request->validate([
             'CourseID' => 'required',
             'InstructorID' => 'required',
+            'StudentID' => 'required',
             'Day' => 'required',
             'Time' => 'required',
             'Time_end' => 'required',
+            'YearLevel' => 'required',
+            'Section' => 'required',
+
         ]);
 
         $schedule = StudentSchedule::findOrFail($id);  // Use the correct model here

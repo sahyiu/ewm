@@ -14,63 +14,55 @@
     <!-- Scripts -->
     <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
 </head>
-<body class="font-sans antialiased bg-gray-100">
-    <div class="min-h-screen flex">
-        <!-- Sidebar -->
-        <div class="w-64 bg-gray-800 text-white p-4">
+<body class="font-sans antialiased">
+<div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-gray-800 text-white p-4">
             <!-- User Profile Section -->
-            <div class="flex flex-col items-center mb-6">
-                <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-gray-700 mb-3">
-                    <img 
-                        src="<?php echo e(Auth::user()->profile_photo_url ?? asset('images/default-profile.png')); ?>" 
-                        alt="Profile Picture" 
-                        class="w-full h-full object-cover"
-                    >
-                </div>
-                <div class="text-center">
+    <div class="flex flex-col items-center mb-6">
+        <!-- User Profile Picture -->
+        <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-gray-700 mb-3">
+            <img 
+                src="<?php echo e(Auth::user()->profile_photo_url ?? asset('images/default-profile.png')); ?>" 
+                alt="Profile Picture" 
+                class="w-full h-full object-cover"
+            >
+        </div>
+        <!-- User Name -->
+        <div class="text-center">
             <h3 class="text-lg font-bold"><?php echo e(Auth::user()->name ?? 'Guest'); ?></h3>
             <p class="text-sm text-gray-400"><?php echo e(Auth::user()->email ?? ''); ?></p>
         </div>
     </div>
         <h2 class="text-2xl mb-4">Menu</h2>
         <ul>
-            <li>
-                <a href="<?php echo e(route('admin.releaseStudentNo')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    RELEASE STUDENT No. RANGE
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.schedule')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    SCHEDULE STUDENT
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.schedule')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    INSTRUCTORS
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.schedule')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    COURSES
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.schedule')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    USERS
-                </a>
-            </li>
-
-            <li>
-                <a href="<?php echo e(route('admin.billings')); ?>" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700" style="margin-bottom : 10px">
-                    BILLINGS
-                </a>
-            </li>
-        </ul>
+        <li class="mb-4">
+        <a href="<?php echo e(route('admin.releaseStudentNo')); ?>" 
+           class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+            RELEASE STUDENT No. RANGE</a></li>
+    <li class="mb-4">
+        <a href="<?php echo e(route('admin.schedule')); ?>" 
+        class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+        SCHEDULE</a></li>
+    <li class="mb-4">
+        <a href="<?php echo e(route('admin.instructor')); ?>" 
+        class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+        INSTRUCTORS</a></li>
+    <li class="mb-4">
+        <a href="<?php echo e(route('admin.instructor')); ?>" 
+        class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+        COURSES</a></li>
+    <li class="mb-4">
+        <a href="<?php echo e(route('admin.instructor')); ?>" 
+        class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+        USERS</a></li>
+    <li class="mb-4">
+        <a href="<?php echo e(route('admin.billings')); ?>" 
+        class="block w-full text-center bg-transparent border-2 border-black-900 text-white px-4 py-3 rounded-md hover:bg-gray-100 hover:border-gray-700">
+        BILLINGS</a></li>
+            </ul>
     </div>
+
 
 
         <!-- Main Content -->

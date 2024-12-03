@@ -70,7 +70,7 @@
                     <div class="flex-1">
             @include('layouts.navigation')<main>
             <div class="container mx-auto p-4">
-        <h1 class="text-2xl mb-4">Asmin Dashboard</h1>
+        <h1 class="text-2xl mb-4">Admin Dashboard</h1>
 
     <main class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

@@ -12,16 +12,18 @@ class StudentSchedule extends Model
     protected $table = 'schedules'; // Specify the table name
 
     // Define the primary key
-    protected $primaryKey = '   id';  // Assuming 'ID' is the name of the primary key column
+    protected $primaryKey = 'id';  // Assuming 'ID' is the name of the primary key column
 
     protected $fillable = [
         'ID',
         'CourseID',           // Foreign Key for Course
         'InstructorID',       // Foreign Key for Instructor
-        'Section',            // Section number
+        'StudentID',            // Section number
         'Day',                // Day of the week (e.g., Monday, Tuesday, etc.)
         'Time',               // Time of the schedule
-        'Is_deleted',         // To track soft deletion status
+        'Time_end',
+        'YearLevel',
+        'Section',         // To track soft deletion status
     ];
 
     // Define any relationships if needed
